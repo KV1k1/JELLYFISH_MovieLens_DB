@@ -212,6 +212,7 @@ JOIN dim_movies dm ON dm.dim_movieID = r.movie_id;
 
 Po úspešnom vytvorení dimenzií a faktovej tabuľky boli dáta nahrané do finálnej štruktúry. Na záver boli staging tabuľky odstránené, aby sa optimalizovalo využitie úložiska:
 
+```sql
 DROP TABLE IF EXISTS age_group_staging;
 DROP TABLE IF EXISTS genres_staging;
 DROP TABLE IF EXISTS movies_staging;
@@ -220,6 +221,7 @@ DROP TABLE IF EXISTS occupations_staging;
 DROP TABLE IF EXISTS users_staging;
 DROP TABLE IF EXISTS ratings_staging;
 DROP TABLE IF EXISTS tags_staging;
+```
 
 ETL proces v Snowflake umožnil spracovanie pôvodných dát z `.csv` formátu do viacdimenzionálneho modelu typu hviezda. Tento proces zahŕňal čistenie, obohacovanie a reorganizáciu údajov. Výsledný model umožňuje analýzu čitateľských preferencií a správania používateľov, pričom poskytuje základ pre vizualizácie a reporty.
 
