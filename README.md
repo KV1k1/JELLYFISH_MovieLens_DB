@@ -17,7 +17,7 @@ Dataset obsahuje nasledujúce hlavné tabuľky:
 - `tags` - Štítky pridelené používateľmi k filmom.
 - `users` - Demografické údaje o používateľoch.
 
-Účelom ETL procesu bolo tieto dáta pripraviť, transformovať a sprístupniť pre viacdimenzionálnu analýzu.
+Účelom ETL procesu bolo pripraviť, transformovať a sprístupniť tieto dáta pre viacdimenzionálnu analýzu.
 
 ---
 ### **1.1 Dátová architektúra**
@@ -38,7 +38,7 @@ Navrhnutý bol **hviezdicový model (star schema)**, pre efektívnu analýzu kde
 
 -  **`dim_movies`**: Detaily o filmoch (názov, žáner, rok vydania).
 -  **`dim_users`**: Demografické informácie o používateľoch (vek, pohlavie, povolanie).
--  **`dim_date`**: Dátumy hodnotení (deň, mesiac, rok).
+-  **`dim_dates`**: Dátumy hodnotenia (deň, mesiac, rok).
 -  **`dim_time`**: Časové údaje (hodina, minuta, sekunda, AM/PM).
 -  **`dim_genres`**: Žánre filmov.
 
@@ -240,7 +240,7 @@ Dashboard obsahuje `6 vizualizácií`, ktoré poskytujú základný prehľad o k
 ### **Graf 1: Popularita žánru podľa počtu hodnotení (top 10)**
 
 
-Tento graf zobrazuje 10 žánrov s najväčším počtom hodnotení filmov. Umožňuje identifikovať, ktoré žánre sú medzi používateľmi najpopulárnejšie. Z vizualizácie sa napríklad ukazuje, že žánre ako „Akcia“ a „Dobrodružný“ majú výrazne viac hodnotení ako iné žánre. Tieto informácie môžu byť cenné pri tvorbe marketingových stratégií alebo odporúčacích systémov.
+Tento graf zobrazuje 10 žánrov s najväčším počtom hodnotení filmov. Umožňuje identifikovať, ktoré žánre sú medzi používateľmi najpopulárnejšie. Z vizualizácie sa napríklad ukazuje, že žánre ako „Comedy“ a „Drama“ majú výrazne viac hodnotení ako iné žánre. Tieto informácie môžu byť cenné pri tvorbe marketingových stratégií alebo odporúčacích systémov.
 
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/top_10_genres.png" alt="Graf">
@@ -260,7 +260,7 @@ LIMIT 10;
 ```
 ---
 ### **Graf 2: Rozdelenie hodnotení podľa pohlavia a času dňa**
-Tento graf zobrazuje, ako sa hodnotenia delia podľa pohlavia používateľov a času dňa. Ukazuje sa, že ženy častejšie hodnotia filmy doobeda, zatiaľ čo muži majú tendenciu hodnotiť viac poobede. Tieto informácie môžu byť užitočné pri plánovaní kampaní, ktoré sa zameriavajú na určité časové obdobia.
+Tento graf zobrazuje, ako sa hodnotenia delia podľa pohlavia používateľov a času dňa. Ukazuje sa, že ženy aj muži častejšie hodnotia filmy doobeda. Tieto informácie môžu byť užitočné pri plánovaní kampaní, ktoré sa zameriavajú na určité časové obdobia.
 
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/gender_ampm.png" alt="Graf">
@@ -281,7 +281,7 @@ ORDER BY time_period, du.gender;
 ```
 ---
 ### **Graf 3: Celkové hodnotenia používateľov vs priemerné hodnotenie**
-Tento graf zobrazuje celkový počet hodnotení, ktoré jednotliví používatelia udelili, a ich priemerné hodnotenie. Z vizualizácie môžeme zistiť, že napríklad používatelia v kategórii „55+“ majú nižší počet hodnotení, ale ich priemerné hodnotenie filmov je o niečo vyššie ako u mladších používateľov. Tieto údaje môžu byť použité na lepšie prispôsobenie odporúčaní na základe vekovej kategórie alebo profesie.
+Tento graf zobrazuje celkový počet hodnotení, ktoré jednotliví používatelia udelili, a ich priemerné hodnotenie. Z vizualizácie môžeme zistiť, že napríklad používatelia v kategórii „56+“ majú nižší počet hodnotení, ale ich priemerné hodnotenie filmov je o niečo vyššie ako u mladších používateľov. Tieto údaje môžu byť použité na lepšie prispôsobenie odporúčaní na základe vekovej kategórie alebo profesie.
 
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/total_vs_avg_rating.png" alt="Graf">
@@ -322,7 +322,7 @@ ORDER BY dd.year;
 ```
 ---
 ### **Graf 5: Zmeny priemerného hodnotenia v priebehu času**
-Tento graf zobrazuje, ako sa priemerné hodnotenie filmov mení v priebehu rokov. Z vizualizácie je zrejmé, že od roku 2010 sa priemerné hodnotenie postupne zvyšuje. Tento trend môže byť spôsobený zlepšením kvality filmov alebo zmenou kritérií hodnotenia používateľov.
+Tento graf zobrazuje, ako sa priemerné hodnotenie filmov mení v priebehu rokov. Z vizualizácie je zrejmé, že od roku 2000 sa priemerné hodnotenie postupne klesajú. Tento trend môže byť spôsobený zlepšením kvality filmov alebo zmenou kritérií hodnotenia používateľov.
 
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/avg_rating_changes.png" alt="Graf">
@@ -341,7 +341,7 @@ ORDER BY dd.year;
 ```
 ---
 ### **Graf 6: Rozdelenie hodnotení podľa povolania**
-Tento graf ukazuje, ako sa hodnotenia filmov líšia podľa povolaní používateľov. Z údajov vyplýva, že napríklad používatelia s profesiami v oblasti marketingu a knižníc sú medzi najaktívnejšími hodnotiteľmi filmov. Tieto informácie môžu byť využité na prispôsobenie marketingových kampaní alebo cieľového obsahu pre rôzne profesijné skupiny.
+Tento graf ukazuje, ako sa hodnotenia filmov líšia podľa povolaní používateľov. Z údajov vyplýva, že napríklad používatelia s profesiami "Educator" a "Executive" sú medzi najaktívnejšími hodnotiteľmi filmov. Tieto informácie môžu byť využité na prispôsobenie marketingových kampaní alebo cieľového obsahu pre rôzne profesijné skupiny.
 
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/ratings_by_occupation.png" alt="Graf">
@@ -361,17 +361,16 @@ GROUP BY du.occupation, fr.rating
 ORDER BY occupation, rating;
 ```
 
-Dashboard poskytuje komplexný pohľad na dáta, pričom zodpovedá dôležité otázky týkajúce sa čitateľských preferencií a správania používateľov. Vizualizácie umožňujú jednoduchú interpretáciu dát a môžu byť využité na optimalizáciu odporúčacích systémov, marketingových stratégií a knižničných služieb.
+Dashboard poskytuje komplexný pohľad na dáta, pričom zodpovedá dôležité otázky týkajúce sa preferencií divákov a ich správania pri hodnotení filmov. Vizualizácie umožňujú jednoduchú interpretáciu dát a môžu byť využité optimalizáciu odporúčacích systémov, marketingových stratégií a plánovania filmových kampaní.
 
 ---
-
 ### **Alternatíva - Čo sa stane so „tags“ tabuľkou?**
 
 Tabuľka „tags“ v databáze MovieLens predstavuje metadáta poskytnuté používateľmi o filmoch a nie je priamo súčasťou schémy `fact_ratings`.
 
-**Čo môžeme s ňou robiť?**
+#### **Čo môžeme s ňou robiť?**
 
-- **Vytvoriť samostatnú faktovú tabuľku pre tagy**
+##### **Vytvoriť samostatnú faktovú tabuľku pre tagy**
 
 Ak sa tagy často analyzujú (napríklad trend tagov alebo ich korelácia s hodnoteniami), podľa mňa, vytvorenie samostatnej faktovej tabuľky by bolo vhodné.
 
@@ -381,8 +380,8 @@ Ak sa tagy často analyzujú (napríklad trend tagov alebo ich korelácia s hodn
   <em>Obrázok 10 fact_tags</em>
 </p>
 
-- **Dimenzionálna tabuľka**
-  -  a. Ak nám nezáleží na jednotlivých tagoch, môžeme ich jednoducho pridať do tabuľky `dim_movies` ako zoznam oddelený čiarkami, čím by každý film mal zoznam svojich tagov.
+ ##### **Dimenzionálna tabuľka**
+ - Ak nám nezáleží na jednotlivých tagoch, môžeme ich jednoducho pridať do tabuľky `dim_movies` ako zoznam oddelený čiarkami, čím by každý film mal zoznam svojich tagov.
 
 ```sql
 ALTER TABLE dim_movies ADD tags VARCHAR;
@@ -394,7 +393,7 @@ SET tags = (
 );
 ```
 
-  -  b. Alternatívne môžeme vytvoriť samostatnú dimenzionálnu tabuľku `dim_tags`, ktorá by obsahovala všetky tagy ako samostatné riadky, a tieto tagy by boli pripojené k filmom cez cudzí kľúč.
+- Alternatívne môžeme vytvoriť samostatnú dimenzionálnu tabuľku `dim_tags`, ktorá by obsahovala všetky tagy ako samostatné riadky, a tieto tagy by boli pripojené k filmom cez cudzí kľúč.
 
 ---
 **Autor:** Viktória Kovácsová
