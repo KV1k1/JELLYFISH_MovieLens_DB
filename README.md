@@ -99,9 +99,9 @@ LEFT JOIN occupations_staging o ON u.occupation_id = o.id;
 
 SCD Typ 2 – Každá zmena v týchto atribútoch vytvára nový záznam v dimenzii, pričom staré hodnoty sú archivované pre historické účely.
 
-#### **Dimenzia dim_date**
+#### **Dimenzia dim_dates**
 
-Dimenzia `dim_date` obsahuje informácie o dátumoch hodnotení filmov. Zabezpečuje analýzu trendov podľa dní, mesiacov, rokov, týždňov a štvrťrokov. Táto dimenzia je **SCD Typ 0**, čo znamená, že údaje v tejto dimenzii sú nemenné a nebudú sa aktualizovať. Ak by bolo potrebné sledovať ďalšie historické zmeny (napr. pre pracovné dni vs. sviatky), klasifikácia by mohla byť prehodnotená na SCD Typ 1 (aktualizácia existujúcich hodnôt) alebo SCD Typ 2 (uchovávanie histórie).
+Dimenzia `dim_dates` obsahuje informácie o dátumoch hodnotení filmov. Zabezpečuje analýzu trendov podľa dní, mesiacov, rokov, týždňov a štvrťrokov. Táto dimenzia je **SCD Typ 0**, čo znamená, že údaje v tejto dimenzii sú nemenné a nebudú sa aktualizovať. Ak by bolo potrebné sledovať ďalšie historické zmeny (napr. pre pracovné dni vs. sviatky), klasifikácia by mohla byť prehodnotená na SCD Typ 1 (aktualizácia existujúcich hodnôt) alebo SCD Typ 2 (uchovávanie histórie).
 
 ```sql
 CREATE TABLE dim_dates AS
