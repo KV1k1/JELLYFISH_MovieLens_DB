@@ -260,7 +260,7 @@ LIMIT 10;
 ```
 ---
 ### **Graf 2: Rozdelenie hodnotení podľa pohlavia a času dňa**
-Tento graf zobrazuje, ako sa hodnotenia delia podľa pohlavia používateľov a času dňa. Ukazuje sa, že ženy aj muži častejšie hodnotia filmy doobeda. Tieto informácie môžu byť užitočné pri plánovaní kampaní, ktoré sa zameriavajú na určité časové obdobia.
+Tento graf zobrazuje, ako sa hodnotenia delia podľa pohlavia používateľov a času dňa. Ukazuje sa, že ženy aj muži častejšie hodnotia filmy doobeda. Táto informácia môže byť užitočné pri plánovaní kampaní, ktoré sa zameriavajú na určité časové obdobia.
 
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/gender_ampm.png" alt="Graf">
@@ -302,7 +302,7 @@ ORDER BY total_ratings DESC;
 ```
 ---
 ### **Graf 4: Frekvencia hodnotenia filmov podľa rokov**
-Graf ukazuje, ako sa počet hodnotení filmov mení podľa jednotlivých rokov. Z vizualizácie je vidieť, že v posledných rokoch sa počet hodnotení dramaticky zvýšil. Tento trend môže odrážať rastúci záujem o filmy a rozšírenie platformy, kde používatelia hodnotia filmy.
+Graf ukazuje, ako sa počet hodnotení filmov mení podľa jednotlivých rokov. Z vizualizácie je vidieť, že v posledných rokoch sa počet hodnotení dramaticky znížil.
 
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/rating_frequency_by_year.png" alt="Graf">
@@ -322,7 +322,7 @@ ORDER BY dd.year;
 ```
 ---
 ### **Graf 5: Zmeny priemerného hodnotenia v priebehu času**
-Tento graf zobrazuje, ako sa priemerné hodnotenie filmov mení v priebehu rokov. Z vizualizácie je zrejmé, že od roku 2000 sa priemerné hodnotenie postupne klesajú. Tento trend môže byť spôsobený zlepšením kvality filmov alebo zmenou kritérií hodnotenia používateľov.
+Tento graf zobrazuje, ako sa priemerné hodnotenie filmov mení v priebehu rokov. Z vizualizácie je zrejmé, že od roku 2000 sa priemerné hodnotenie postupne klesá. Tento trend môže byť spôsobený zlepšením kvality filmov alebo zmenou kritérií hodnotenia používateľov.
 
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/avg_rating_changes.png" alt="Graf">
