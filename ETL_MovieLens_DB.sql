@@ -182,7 +182,7 @@ GROUP BY t.tags;
 
 -- dim_users
 CREATE OR REPLACE TABLE dim_users AS
-SELECT DISTINCT
+SELECT
     u.id AS dim_userID,
     ag.name AS age_group,
     u.gender,
