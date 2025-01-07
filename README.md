@@ -16,6 +16,7 @@ Dataset obsahuje nasledujúce hlavné tabuľky:
 - `ratings` - Hodnotenia filmov od používateľov.
 - `tags` - Štítky pridelené používateľmi k filmom.
 - `users` - Demografické údaje o používateľoch.
+- `genres_movies`
 
 Účelom ETL procesu bolo pripraviť, transformovať a sprístupniť tieto dáta pre viacdimenzionálnu analýzu.
 
@@ -378,7 +379,7 @@ ORDER BY dd.year;
 ```
 ---
 ### **Graf 4: Zmeny priemerného hodnotenia v priebehu času**
-Tento graf zobrazuje, ako sa priemerné hodnotenie filmov mení v priebehu rokov. Z vizualizácie je zrejmé, že od roku 2000 sa priemerné hodnotenie postupne klesá. Tento trend môže byť spôsobený zlepšením kvality filmov alebo zmenou kritérií hodnotenia používateľov.
+Tento graf zobrazuje, ako sa priemerné hodnotenie filmov mení v priebehu rokov. Z vizualizácie je zrejmé, že od roku 2000 sa priemerné hodnotenia postupne klesajú a v roku 2003 začínajú opäť rásť.
 
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/avg_rating_changes.png" alt="Graf">
@@ -397,7 +398,7 @@ ORDER BY dd.year;
 ```
 ---
 ### **Graf 5: Rozdelenie hodnotení podľa povolania**
-Tento graf ukazuje, ako sa hodnotenia filmov líšia podľa povolaní používateľov. Z údajov vyplýva, že napríklad používatelia s profesiami "Educator" a "Executive" sú medzi najaktívnejšími hodnotiteľmi filmov. Tieto informácie môžu byť využité na prispôsobenie marketingových kampaní alebo cieľového obsahu pre rôzne profesijné skupiny.
+Tento graf ukazuje, ako sa hodnotenia filmov líšia podľa povolaní používateľov. Z údajov vyplýva, že napríklad používatelia s profesiami "Administrator" a "Educator" sú medzi najaktívnejšími hodnotiteľmi filmov. Tieto informácie môžu byť využité na prispôsobenie marketingových kampaní alebo cieľového obsahu pre rôzne profesijné skupiny.
 
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/ratings_by_occupation.png" alt="Graf">
