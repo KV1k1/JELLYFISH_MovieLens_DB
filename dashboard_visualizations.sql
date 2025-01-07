@@ -1,14 +1,3 @@
--- Popularita žánru podľa počtu hodnotení (top 10)
--- Ukazuje, ktoré žánre majú najviac hodnotení.
-SELECT 
-    dm.genre AS genre,
-    COUNT(fr.fact_ratingID) AS total_ratings
-FROM fact_ratings fr
-JOIN dim_movies dm ON fr.dim_movieID = dm.dim_movieID
-GROUP BY dm.genre
-ORDER BY total_ratings DESC
-LIMIT 10;
-
 -- Rozdelenie hodnotení podľa pohlavia a času dňa
 -- Ukazuje rozdelenie hodnotení podľa pohlavia a podľa toho, či je doobeda alebo poobede.
 SELECT 
