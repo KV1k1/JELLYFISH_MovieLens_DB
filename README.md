@@ -321,7 +321,7 @@ Tento graf zobrazuje, ako sa hodnotenia delia podľa pohlavia používateľov a 
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/gender_ampm.png" alt="Graf">
   <br>
-  <em>Obrázok 5 Graf 2</em>
+  <em>Obrázok 4 Graf 1</em>
 </p>
 
 ```sql
@@ -342,7 +342,7 @@ Tento graf zobrazuje celkový počet hodnotení, ktoré jednotliví používatel
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/total_vs_avg_rating.png" alt="Graf">
   <br>
-  <em>Obrázok 6 Graf 3</em>
+  <em>Obrázok 5 Graf 2</em>
 </p>
 
 ```sql
@@ -363,7 +363,7 @@ Graf ukazuje, ako sa počet hodnotení filmov mení podľa jednotlivých rokov. 
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/rating_frequency_by_year.png" alt="Graf">
   <br>
-  <em>Obrázok 7 Graf 4</em>
+  <em>Obrázok 6 Graf 3</em>
 </p>
 
 ```sql
@@ -383,7 +383,7 @@ Tento graf zobrazuje, ako sa priemerné hodnotenie filmov mení v priebehu rokov
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/avg_rating_changes.png" alt="Graf">
   <br>
-  <em>Obrázok 8 Graf 5</em>
+  <em>Obrázok 7 Graf 4</em>
 </p>
 
 ```sql
@@ -402,7 +402,7 @@ Tento graf ukazuje, ako sa hodnotenia filmov líšia podľa povolaní používat
 <p align="center">
   <img src="https://github.com/KV1k1/JELLYFISH_MovieLens_DB/blob/main/graphs/ratings_by_occupation.png" alt="Graf">
   <br>
-  <em>Obrázok 9 Garf 6</em>
+  <em>Obrázok 8 Garf 5</em>
 </p>
 
 ```sql
